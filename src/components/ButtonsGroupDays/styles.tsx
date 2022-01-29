@@ -45,6 +45,7 @@ export const Button = styled(ButtonTemplate)`
     padding: 0.9rem 1.6rem 1rem;
     font-size: 1.6rem;
     line-height: 1.333;
+    text-align: left;
 `;
 
 export const ButtonTop = styled.span`

@@ -28,7 +28,7 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         font-size: 1.6rem;
         line-height: 1.5;
-        font-weight: 500;
+        font-weight: 400;
         font-family: 'PT Root UI', Arial, Helvetica, sans-serif;
         color: #1f1f1f;
         text-rendering: optimizeLegibility;

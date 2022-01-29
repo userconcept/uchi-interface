@@ -64,5 +64,5 @@ export const BottomTitle = styled.h2`
 `;
 
 export const BottomText = styled.p`
-    margin: 1rem 0 2.4rem;
+    margin: 0.5rem 0 2.4rem;
 `;

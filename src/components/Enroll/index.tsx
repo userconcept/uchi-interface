@@ -1,189 +1,39 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Icon from './../Icon';
 import Select from './../Select';
 import ButtonsGroup from '../ButtonsGroup';
 import ButtonsGroupDays from '../ButtonsGroupDays';
 import ButtonsGroupTime from '../ButtonsGroupTime';
+import { IDataSubject } from '../../interfaces';
 import { Container, Title, Wrapper, Top, TopText, Bottom, BottomTitle, BottomText } from './styles';
 
-const Enroll: React.FC = () => {
-    const [subjects, setSubjects] = useState([
-        {
-            id: 0,
-            text: 'Русский язык',
-            active: false,
-        },
-        {
-            id: 1,
-            text: 'Английский язык',
-            active: false,
-        },
-        {
-            id: 2,
-            text: 'Алгебра',
-            active: true,
-        },
-        {
-            id: 3,
-            text: 'Геометрия',
-            active: false,
-        },
-        {
-            id: 4,
-            text: 'Физика',
-            active: false,
-        },
-        {
-            id: 5,
-            text: 'Химия',
-            active: false,
-        },
-        {
-            id: 6,
-            text: 'Биология',
-            active: false,
-        },
-        {
-            id: 7,
-            text: 'История',
-            active: false,
-        },
-        {
-            id: 8,
-            text: 'Обществознание',
-            active: false,
-        },
-    ]);
+interface Props {
+    data: Array<IDataSubject>;
+}
 
-    const [days, setDays] = useState([
-        {
-            id: 0,
-            day: 'Сегодня',
-            date: '14 марта',
-            active: false,
-        },
-        {
-            id: 1,
-            day: 'Завтра',
-            date: '15 марта',
-            active: false,
-        },
-        {
-            id: 2,
-            day: 'Воскресенье',
-            date: '16 марта',
-            active: true,
-        },
-        {
-            id: 3,
-            day: 'Понедельник',
-            date: '17 марта',
-            active: false,
-        },
-        {
-            id: 4,
-            day: 'Вторник',
-            date: '18 марта',
-            active: false,
-        },
-        {
-            id: 5,
-            day: 'Среда',
-            date: '19 марта',
-            active: false,
-        },
-    ]);
+const Enroll: React.FC<Props> = ({ data }) => {
+    const [subjects, setSubjects] = useState(data);
 
-    const [timeMorning, setTimeMorning] = useState([
-        {
-            id: 0,
-            text: '9:00',
-            active: false,
-        },
-        {
-            id: 1,
-            text: '9:40',
-            active: false,
-        },
-        {
-            id: 2,
-            text: '10:20',
-            active: true,
-        },
-        {
-            id: 3,
-            text: '11:40',
-            active: false,
-        },
-    ]);
+    const [days, setDays] = useState(subjects[0].days);
 
-    const [timeDay, setTimeDay] = useState([
-        {
-            id: 0,
-            text: '12:00',
-            active: false,
-        },
-        {
-            id: 1,
-            text: '13:20',
-            active: false,
-        },
-        {
-            id: 2,
-            text: '14:00',
-            active: true,
-        },
-        {
-            id: 3,
-            text: '14:20',
-            active: false,
-        },
-        {
-            id: 4,
-            text: '15:00',
-            active: true,
-        },
-        {
-            id: 5,
-            text: '16:40',
-            active: false,
-        },
-    ]);
+    const [timeMorning, setTimeMorning] = useState(subjects[0].days[0].timeMorning);
 
-    const [timeEvening, setTimeEvening] = useState([
-        {
-            id: 0,
-            text: '18:00',
-            active: false,
-        },
-        {
-            id: 1,
-            text: '19:30',
-            active: false,
-        },
-        {
-            id: 2,
-            text: '20:00',
-            active: true,
-        },
-        {
-            id: 3,
-            text: '21:20',
-            active: false,
-        },
-    ]);
+    const [timeDay, setTimeDay] = useState(subjects[0].days[0].timeDay);
 
-    useEffect(() => {
-        console.log(subjects);
-        console.log(days);
-    }, [subjects, days]);
+    const [timeEvening, setTimeEvening] = useState(subjects[0].days[0].timeEvening);
 
     const getButtonId = (id: number) => {
-        setSubjects(subjects.map((obj) => ({ ...obj, active: obj.id === id })));
+        const activeSubject = subjects.map((obj: any) => ({ ...obj, active: obj.id === id }));
+        setSubjects(activeSubject);
+        setDays(activeSubject[id].days);
     };
 
     const getButtonDaysId = (id: number) => {
-        setDays(days.map((obj) => ({ ...obj, active: obj.id === id })));
+        const activeDay = days.map((obj: any) => ({ ...obj, active: obj.id === id }));
+        setDays(activeDay);
+        setTimeMorning(activeDay[id].timeMorning);
+        setTimeDay(activeDay[id].timeDay);
+        setTimeEvening(activeDay[id].timeEvening);
     };
 
     const getButtonTimeId = (id: number) => {

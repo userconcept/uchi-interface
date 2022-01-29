@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IButtonsGroupTime, IButtonsGroupTimeItem } from './../../interfaces';
+import { IButtonsGroupTime, IDataSubjectTime } from './../../interfaces';
 import { Container, Button, Left, Right } from './styles';
 
 const ButtonsGroupTime: React.FC<IButtonsGroupTime> = ({ obj, change, icon, text }) => {
@@ -17,7 +17,7 @@ const ButtonsGroupTime: React.FC<IButtonsGroupTime> = ({ obj, change, icon, text
                 {text}
             </Left>
             <Right>
-                {obj.map((obj: IButtonsGroupTimeItem) => (
+                {obj.map((obj: IDataSubjectTime) => (
                     <Button
                         onClick={() => buttonClick(obj.id)}
                         active={obj.id === active ? true : false}

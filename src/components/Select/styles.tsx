@@ -8,11 +8,12 @@ export const Container = styled.div`
     width: 100%;
     max-width: 35rem;
     margin: 0 auto;
+    text-align: left;
     position: relative;
 `;
 
 export const Header = styled.div<Props>`
-    padding: 1.1rem 0;
+    padding: 1.1rem 0 1.1rem 1.2rem;
     font-size: 1.6rem;
     border-radius: 0.6rem;
     border: 1px solid
@@ -47,7 +48,7 @@ export const Header = styled.div<Props>`
     & svg {
         position: absolute;
         top: 50%;
-        right: 2rem;
+        right: 1.2rem;
         margin-top: -0.5rem;
     }
 `;
@@ -69,7 +70,7 @@ export const List = styled.ul`
 `;
 
 export const ListItem = styled.li`
-    padding: 1.1rem 0;
+    padding: 1.1rem 0 1.1rem 1.2rem;
     transition: ${(props) => `${props.theme.transitions.small}color`};
     cursor: pointer;
 

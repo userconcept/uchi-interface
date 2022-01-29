@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IButtonsGroupDays, IButtonsGroupDaysItem } from './../../interfaces';
+import { IButtonsGroupDays, IDataSubjectDay } from './../../interfaces';
 import { Container, Scroll, Button, ButtonTop, ButtonBottom } from './styles';
 
 const ButtonsGroupDays: React.FC<IButtonsGroupDays> = ({ obj, change }) => {
@@ -13,7 +13,7 @@ const ButtonsGroupDays: React.FC<IButtonsGroupDays> = ({ obj, change }) => {
     return (
         <Container>
             <Scroll>
-                {obj.map((obj: IButtonsGroupDaysItem) => (
+                {obj.map((obj: IDataSubjectDay) => (
                     <Button
                         onClick={() => buttonClick(obj.id)}
                         active={obj.id === active ? true : false}

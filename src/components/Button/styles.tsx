@@ -8,9 +8,10 @@ export const Container = styled.button<Props>`
     display: inline-block;
     vertical-align: top;
     margin: 0;
-    padding: 0.9rem 2rem 1rem;
+    padding: 0.9rem 1.9rem 1rem;
     border: 1px solid
         ${(props) => (props.active ? props.theme.colors.blue1 : props.theme.colors.blue2)};
+    outline: none;
     font-size: 1.8rem;
     line-height: 1.5;
     font-family: 'PT Root UI';
