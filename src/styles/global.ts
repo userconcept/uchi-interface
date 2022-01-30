@@ -18,9 +18,9 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 62.5%; // 10px
         -webkit-text-size-adjust: none;
 
-        @media (min-width: 1600px) {
+        /* @media (min-width: 1600px) {
             font-size: 0.625vw;
-        }
+        } */
     }
 
     body {
