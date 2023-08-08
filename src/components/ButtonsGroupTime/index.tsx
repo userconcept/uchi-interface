@@ -20,7 +20,7 @@ const ButtonsGroupTime: React.FC<IButtonsGroupTime> = ({ obj, change, icon, text
                 {obj.map((obj: IDataSubjectTime) => (
                     <Button
                         onClick={() => buttonClick(obj.id)}
-                        active={obj.id === active ? true : false}
+                        $active={obj.id === active ? true : false}
                         key={obj.id}>
                         {obj.text}
                     </Button>

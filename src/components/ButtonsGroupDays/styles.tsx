@@ -5,8 +5,8 @@ export const Container = styled.div`
     margin: 0 -0.4rem 2.8rem;
     position: relative;
 
-    &:before {
-        content: ' ';
+    &::before {
+        content: "";
         display: block;
         position: absolute;
         top: 0;

@@ -17,7 +17,7 @@ const Select: React.FC = () => {
 
     return (
         <Container>
-            <Header onClick={toggling} active={open}>
+            <Header onClick={toggling} $active={open}>
                 {selectedOption || '9 класс'}
                 <Icon name="arrow_down" csswidth="1.8" cssheight="2" color="grey" />
             </Header>

@@ -16,7 +16,7 @@ const ButtonsGroupDays: React.FC<IButtonsGroupDays> = ({ obj, change }) => {
                 {obj.map((obj: IDataSubjectDay) => (
                     <Button
                         onClick={() => buttonClick(obj.id)}
-                        active={obj.id === active ? true : false}
+                        $active={obj.id === active ? true : false}
                         key={obj.id}>
                         <ButtonTop>{obj.day}</ButtonTop>
                         <ButtonBottom>{obj.date}</ButtonBottom>

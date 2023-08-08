@@ -16,7 +16,7 @@ const ButtonsGroup: React.FC<IButtonsGroup> = ({ obj, change }) => {
             {obj.map((obj: IButtonsGroupItem) => (
                 <Button
                     onClickHandler={() => buttonClick(obj.id)}
-                    active={obj.id === active ? true : false}
+                    $active={obj.id === active ? true : false}
                     key={obj.id}>
                     {obj.text}
                 </Button>

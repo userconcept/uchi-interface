@@ -3,13 +3,14 @@ import { MouseEventHandler } from 'react';
 import { Container } from './styles';
 
 interface Props {
+    children: React.ReactNode;
     onClickHandler?: MouseEventHandler<HTMLButtonElement>;
-    active?: boolean;
+    $active?: boolean;
 }
 
-const Button: React.FC<Props> = ({ children, onClickHandler = undefined, active = false }) => {
+const Button: React.FC<Props> = ({ children, onClickHandler = undefined, $active = false }) => {
     return (
-        <Container onClick={onClickHandler} active={active}>
+        <Container onClick={onClickHandler} $active={$active}>
             {children}
         </Container>
     );

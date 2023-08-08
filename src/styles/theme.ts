@@ -14,5 +14,6 @@ export const theme = {
     },
     transitions: {
         small: '0.25s linear ',
+        none: '0s ease ',
     },
 };

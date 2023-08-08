@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface Props {
-    active: boolean;
+    $active: boolean;
 }
 
 export const Container = styled.div`
@@ -17,15 +17,14 @@ export const Header = styled.div<Props>`
     font-size: 1.6rem;
     border-radius: 0.6rem;
     border: 1px solid
-        ${(props) => (props.active ? props.theme.colors.blue1 : props.theme.colors.black6)};
+        ${(props) => (props.$active ? props.theme.colors.blue1 : props.theme.colors.black6)};
     border-bottom: 1px solid
-        ${(props) => (props.active ? 'transparent' : props.theme.colors.black6)};
-    border-bottom-left-radius: ${(props) => (props.active ? '0' : '0.8rem')};
-    border-bottom-right-radius: ${(props) => (props.active ? '0' : '0.8rem')};
-    transition: ${(props) =>
-        `${props.theme.transitions.small}color, ${
-            props.active ? '0' : props.theme.transitions.small
-        }border-color`};
+        ${(props) => (props.$active ? 'transparent' : props.theme.colors.black6)};
+    border-bottom-left-radius: ${(props) => (props.$active ? '0' : '0.8rem')};
+    border-bottom-right-radius: ${(props) => (props.$active ? '0' : '0.8rem')};
+    transition:
+        ${(props) => `${props.theme.transitions.small}color,
+        ${props.$active ? props.theme.transitions.none : props.theme.transitions.small}border-color`};
     position: relative;
     user-select: none;
     -ms-user-select: none;
@@ -38,7 +37,7 @@ export const Header = styled.div<Props>`
         color: ${(props) => props.theme.colors.blue1};
         border-color: ${(props) => props.theme.colors.blue1};
         border-bottom-color: ${(props) =>
-            props.active ? 'transparent' : props.theme.colors.blue1};
+            props.$active ? 'transparent' : props.theme.colors.blue1};
 
         & svg {
             fill: ${(props) => props.theme.colors.blue1};
